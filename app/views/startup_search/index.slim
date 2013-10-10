@@ -1,0 +1,13 @@
+h2 Search for an AngelList startup here!
+
+=form_for @startup, url: {action: "search"} do |f|
+  =f.label :name
+  =f.label :logo
+  =f.label :city
+  =f.label :state
+  =f.label :product_description
+  =f.label :pitch
+  =f.label :markets
+  =f.label :al_url
+
+  =f.submit "Search for startup"

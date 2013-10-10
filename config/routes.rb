@@ -1,7 +1,8 @@
 VisibleMiniProject::Application.routes.draw do
 
-  root to: "site#index"
+  root to: "startup_search#index"
 
+  match "/search" => "startup_search#search", as: "search"
 
 
 
