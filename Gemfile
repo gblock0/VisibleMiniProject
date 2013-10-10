@@ -10,6 +10,8 @@ gem 'sqlite3'
 # PostGreSQL
 gem 'pg'
 
+gem 'httparty'
+
 # Helps with Herkou Stuff
 #gem 'taps'
 
