@@ -18,18 +18,3 @@ guard 'livereload' do
   watch(%r{(app|lib|vendor)/assets/.+\.styl})  { |m| "/assets/stylesheets/stylized_application.css" }
   watch(%r{(app|lib|vendor)/assets/\w+/.+\.scss})  { |m| "/assets/stylesheets/sassy_application.css" }
 end
-
-#guard 'rspec', :zeus => true, :bundler => false, :cli => '--tag ~js' do
-guard 'rspec', :zeus => true, :bundler => false, all_on_start: false do
-  watch(%r{^spec/.+_spec\.rb$})
-  watch(%r{^spec/acceptance/.+_spec\.rb$})
-  watch(%r{^lib/(.+)\.rb$})     { |m| "spec/lib/#{m[1]}_spec.rb" }
-  watch('spec/spec_helper.rb')  { "spec" }
-
-  # Rails example
-  watch(%r{^app/(.+)\.rb$})                           { |m| "spec/#{m[1]}_spec.rb" }
-  watch(%r{^spec/support/(.+)\.rb$})                  { "spec" }
-  watch(%r{^spec/factories/(.+)\.rb$})                  { "spec" }
-  watch(%r{^spec/support/(.+)/(.+)\.rb$})             { "spec" }
-end
-
