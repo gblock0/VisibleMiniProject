@@ -40,8 +40,6 @@ gem 'slim-rails'
 
 gem 'jquery-rails'
 
-gem 'heroku' # [needs setup]
-
 # Ryan's Stylus
 gem 'stylus', '~> 0.7.0.dev', git: 'git://github.com/rschmukler/ruby-stylus.git', branch: 'index_files'
 
