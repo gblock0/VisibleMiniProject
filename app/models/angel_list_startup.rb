@@ -6,7 +6,7 @@ class AngelListStartup < ActiveRecord::Base
   base_uri "https://api.angel.co/1/search?query="
 
 
-  attr_accessible :name, :logo, :locations, :product_description, :pitch, :markets, :al_url
+  attr_accessible :name, :logo, :locations, :product_description, :pitch, :markets, :al_url, :company_url
   
 
   def self.search_al(name)
@@ -20,7 +20,8 @@ class AngelListStartup < ActiveRecord::Base
     response = get(response_str)
     if response.success?
       self.new(name: response["name"],logo: response["logo_url"], locations: response["locations"],
-               product_description: response["product_desc"],pitch: response["high_concept"],markets: response["markets"],al_url: response["angellist_url"] )
+               product_description: response["product_desc"],pitch: response["high_concept"],markets: response["markets"],
+               al_url: response["angellist_url"], company_url: response["company_url"] )
     else
       raise response.response
     end

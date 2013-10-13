@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20131010181550) do
+ActiveRecord::Schema.define(:version => 20131011012826) do
 
   create_table "angel_list_startups", :force => true do |t|
     t.string   "name"
@@ -23,6 +23,7 @@ ActiveRecord::Schema.define(:version => 20131010181550) do
     t.string   "al_url"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "company_url"
   end
 
 end
