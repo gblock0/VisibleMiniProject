@@ -12,6 +12,11 @@ gem 'httparty'
 
 # Helps with Herkou Stuff
 #gem 'taps'
+#
+#
+group :test do
+  gem 'sqlite3'
+end
 
 group :development do
   gem 'guard' # [needs setup]
@@ -37,8 +42,6 @@ group :test, :development do
 end
 
 gem 'slim-rails'
-
-gem 'jquery-rails'
 
 # Ryan's Stylus
 gem 'stylus', '~> 0.7.0.dev', git: 'git://github.com/rschmukler/ruby-stylus.git', branch: 'index_files'
