@@ -16,14 +16,20 @@ h2
 
 .locations
   h4
-    |Locations:
+    -if @startup.cities.count > 1
+      |Locations:
+    - else
+      | Location:
   -@startup.cities.each do |city|
     .city
       =city
 
 .markets
   h4
-    |Markets:
+    - if @startup.markets.count > 1
+      |Markets:
+    - else
+      |Market:
   -@startup.markets.each do |market|
     .market
       =market
