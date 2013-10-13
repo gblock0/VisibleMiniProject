@@ -1,5 +1,8 @@
 h2 Search for an AngelList startup here!
 
+p#error-flash
+  =flash[:error]
+
 fieldset
   =form_tag("/search")
     =label_tag :url, "URL for Startup"

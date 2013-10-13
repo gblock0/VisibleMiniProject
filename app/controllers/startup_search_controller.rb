@@ -8,7 +8,7 @@ class StartupSearchController < ApplicationController
 
   def search
     original_url = params[:url]
-
+    @startup = nil
     original_url = cleanUrl(original_url)
     
     startup_url = original_url.split('.')[0]
@@ -22,7 +22,9 @@ class StartupSearchController < ApplicationController
         break
       end
     end
-
+    if @startup.blank?
+      redirect_to root_path, flash: {error: "Could not find Startup"}
+    end
   end
 
 end

@@ -1,12 +1,26 @@
-=@startup.name
+h2
+  =@startup.name
 
-    /=f.label :name
-    /=f.text_field :name
-    /=f.label :logo
-    /=f.label :city
-    /=f.label :state
-    /=f.label :product_description
-    /=f.label :pitch
-    /=f.label :markets
-    /=f.label :al_url
+.startup-logo
+  =image_tag @startup.logo
 
+.prod-descrip
+  h4
+    |Product Description: 
+  =@startup.product_description
+
+.pitch
+  h4
+    |Pitch: 
+  = @startup.pitch
+
+.markets
+  h4
+    |Markets:
+  -@startup.markets.each do |market|
+    .market
+      =market["display_name"]
+
+.al_url
+  = link_to "AngelList Link", @startup.al_url
+ 
