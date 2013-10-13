@@ -14,6 +14,13 @@ h2
     |Pitch: 
   = @startup.pitch
 
+.locations
+  h4
+    |Locations:
+  -@startup.locations.each do |location|
+    .city
+      =location["display_name"]
+
 .markets
   h4
     |Markets:
