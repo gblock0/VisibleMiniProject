@@ -11,19 +11,20 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20131011012826) do
+ActiveRecord::Schema.define(:version => 20131013200558) do
 
   create_table "angel_list_startups", :force => true do |t|
     t.string   "name"
     t.string   "logo"
-    t.string   "locations"
+    t.text     "cities",              :limit => 255
     t.string   "product_description"
     t.string   "pitch"
-    t.string   "markets"
+    t.text     "markets",             :limit => 255
     t.string   "al_url"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "company_url"
+    t.string   "search_url"
   end
 
 end

@@ -6,16 +6,31 @@ class StartupSearchController < ApplicationController
   end
 
   def search
-    original_url = params[:url]
+    search_url = params[:url]
 
-    original_url = cleanUrl(original_url)
-    startup_response = AngelListStartup.search_al(original_url)
-    if startup_response.success?
-      @startup = AngelListStartup.create(name: startup_response["name"],logo: startup_response["logo_url"], locations: startup_response["locations"],
-               product_description: startup_response["product_desc"],pitch: startup_response["high_concept"],markets: startup_response["markets"],
-               al_url: startup_response["angellist_url"], company_url: startup_response["company_url"] )
-    else
-      redirect_to root_path, flash: {error: "Cannot find Startup"}
+    search_url = cleanUrl(search_url)
+    @startup = AngelListStartup.find_by_search_url(search_url)
+    if @startup.blank?
+      startup_response = AngelListStartup.search_al(search_url)
+      if startup_response.success?
+        @startup = AngelListStartup.create(name: startup_response["name"],logo: startup_response["logo_url"],
+                 product_description: startup_response["product_desc"],pitch: startup_response["high_concept"],
+                 al_url: startup_response["angellist_url"], company_url: startup_response["company_url"], search_url: search_url )
+        cities = []
+        startup_response["locations"].each do |location|
+          cities.push(location["display_name"])
+        end
+        @startup.cities = cities
+
+        markets = []
+        startup_response["markets"].each do |market|
+          markets.push(market["display_name"])
+        end
+        @startup.markets = markets
+        @startup.save
+      else
+        redirect_to root_path, flash: {error: "Cannot find Startup"}
+      end
     end
   end
 

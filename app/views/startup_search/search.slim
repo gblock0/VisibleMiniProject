@@ -17,16 +17,16 @@ h2
 .locations
   h4
     |Locations:
-  -@startup.locations.each do |location|
+  -@startup.cities.each do |city|
     .city
-      =location["display_name"]
+      =city
 
 .markets
   h4
     |Markets:
   -@startup.markets.each do |market|
     .market
-      =market["display_name"]
+      =market
 
 .al_url
   = link_to "AngelList Link", @startup.al_url
