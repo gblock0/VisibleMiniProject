@@ -274,4 +274,4 @@ DEPENDENCIES
   stylus (~> 0.7.0.dev)!
   uglifier (>= 1.0.3)
   zeus
-  zurb-foundation (= 3.2.5)
+  zurb-foundation

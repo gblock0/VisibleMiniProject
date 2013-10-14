@@ -55,7 +55,7 @@ group :assets do
   gem 'sprockets'
   gem 'uglifier', '>= 1.0.3'
   gem 'compass-rails'
-  gem 'zurb-foundation', "= 3.2.5"
+  gem 'zurb-foundation'
   gem 'font-awesome-rails'
 end
 
