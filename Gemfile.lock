@@ -87,6 +87,7 @@ GEM
       railties (>= 3.2, < 5.0)
     formatador (0.2.4)
     fssm (0.2.10)
+    geocoder (1.1.8)
     growl (1.0.3)
     guard (2.0.3)
       formatador (>= 0.2.4)
@@ -242,6 +243,7 @@ DEPENDENCIES
   compass-rails
   factory_girl_rails
   font-awesome-rails
+  geocoder
   growl
   guard
   guard-bundler

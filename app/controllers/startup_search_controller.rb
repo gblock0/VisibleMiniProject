@@ -16,17 +16,27 @@ class StartupSearchController < ApplicationController
         @startup = AngelListStartup.create(name: startup_response["name"],logo: startup_response["logo_url"],
                  product_description: startup_response["product_desc"],pitch: startup_response["high_concept"],
                  al_url: startup_response["angellist_url"], company_url: startup_response["company_url"], search_url: search_url )
-        cities = []
+        locations = Hash.new
         startup_response["locations"].each do |location|
-          cities.push(location["display_name"])
+          city = location["display_name"]
+          state = Geocoder.search(city)
+          if state.length == 1
+            state = state[0].state
+            locations[city] = state
+          else
+            locations[city] = ""
+          end
         end
-        @startup.cities = cities
+        @startup.locations = locations
 
         markets = []
         startup_response["markets"].each do |market|
           markets.push(market["display_name"])
         end
         @startup.markets = markets
+        
+
+
         @startup.save
       else
         redirect_to root_path, flash: {error: "Cannot find Startup"}

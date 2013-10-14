@@ -11,12 +11,12 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20131014020613) do
+ActiveRecord::Schema.define(:version => 20131014160536) do
 
   create_table "angel_list_startups", :force => true do |t|
     t.string   "name"
     t.string   "logo"
-    t.text     "cities",              :limit => 255
+    t.text     "locations",           :limit => 255
     t.text     "product_description", :limit => 255
     t.string   "pitch"
     t.text     "markets",             :limit => 255

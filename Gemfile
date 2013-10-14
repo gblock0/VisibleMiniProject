@@ -61,6 +61,7 @@ end
 
 gem 'coffee-rails', '~> 3.2.1'
 gem 'jquery-rails'
+gem 'geocoder'
 
 # To use Jbuilder templates for JSON
 # gem 'jbuilder'
