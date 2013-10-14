@@ -3,9 +3,11 @@ h2 Search for an AngelList startup here!
 p#error-flash
   =flash[:error]
 
-fieldset
-  =form_tag("/search")
-    =label_tag :url, "URL for Startup"
-    =text_field_tag :url
+.search-field.row
+  .large-12
+    fieldset
+      =form_tag("/search")
+        =label_tag :url, "URL for Startup"
+        =text_field_tag :url
 
-    =submit_tag "Search for startup"
+        =submit_tag "Search for startup"

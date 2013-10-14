@@ -1,41 +1,43 @@
-h2
-  =@startup.name
+.content
+  .startup-name
+    h2
+      =@startup.name
 
-.startup-logo
-  =image_tag @startup.logo
+  .startup-logo
+    =image_tag @startup.logo
 
-.prod-descrip
-  h4
-    |Product Description: 
-  =@startup.product_description
+  .prod-descrip
+    h4
+      |Product Description: 
+    =@startup.product_description
 
-.pitch
-  h4
-    |Pitch: 
-  = @startup.pitch
+  .pitch
+    h4
+      |Pitch: 
+    = @startup.pitch
 
-.locations
-  h4
-    -if @startup.locations.count > 1
-      |Locations:
-    - else
-      | Location:
-  -@startup.locations.each do |city, state|
-    .city
-      =city
-      - if state != ""
-        =", " + state
+  .locations
+    h4
+      -if @startup.locations.count > 1
+        |Locations:
+      - else
+        | Location:
+    -@startup.locations.each do |city, state|
+      .city
+        =city
+        - if state != ""
+          =", " + state
 
-.markets
-  h4
-    - if @startup.markets.count > 1
-      |Markets:
-    - else
-      |Market:
-  -@startup.markets.each do |market|
-    .market
-      =market
+  .markets
+    h4
+      - if @startup.markets.count > 1
+        |Markets:
+      - else
+        |Market:
+    -@startup.markets.each do |market|
+      .market
+        =market
 
-.al_url
-  = link_to "AngelList Link", @startup.al_url
- 
+  .al_url
+    = link_to "AngelList Link", @startup.al_url
+   
