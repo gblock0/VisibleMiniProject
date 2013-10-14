@@ -43,8 +43,6 @@ end
 
 gem 'slim-rails'
 
-# Ryan's Stylus
-gem 'stylus', '~> 0.7.0.dev', git: 'git://github.com/rschmukler/ruby-stylus.git', branch: 'index_files'
 
 # Makes ActiveRecord queries with fewer strings
 gem 'squeel'
@@ -55,7 +53,10 @@ group :assets do
   gem 'sprockets'
   gem 'uglifier', '>= 1.0.3'
   gem 'compass-rails'
+  gem 'zurb-foundation'
   gem 'font-awesome-rails'
+  # Ryan's Stylus
+  gem 'stylus', '~> 0.7.0.dev', git: 'git://github.com/rschmukler/ruby-stylus.git', branch: 'index_files'
 end
 
 gem 'coffee-rails', '~> 3.2.1'
