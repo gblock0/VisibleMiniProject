@@ -63,7 +63,7 @@ module VisibleMiniProject
     config.assets.enabled = true
     config.assets.initialize_on_precompile = false
     config.assets.paths << Rails.root.join('app', 'assets', 'templates')
-    Stylus.use(:nib) if defined?(Stylus)
+    #Stylus.use(:nib) if defined?(Stylus)
     
 
     # Version of your assets, change this if you want to expire all your assets
